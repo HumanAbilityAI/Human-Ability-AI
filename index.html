@@ -1,0 +1,103 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Human Ability AI</title>
+<style>
+body {
+  background:#10172a;
+  color:white;
+  font-family:Arial;
+  text-align:center;
+  padding:15px;
+}
+h1 {color:#65a5ff;}
+.card {
+  background:#202e49;
+  padding:20px;
+  margin:15px 0;
+  border-radius:15px;
+}
+button, select {
+  background:#477cff;
+  color:white;
+  padding:13px;
+  border:0;
+  border-radius:10px;
+  margin:8px;
+  font-size:16px;
+}
+select {max-width:100%;}
+</style>
+</head>
+<body>
+
+<h1>Human Ability AI</h1>
+<p>Learn • Discover • Achieve • Innovate</p>
+
+<div class="card">
+<h2>Welcome!</h2>
+<p>Unlock Your Human Potential</p>
+<h3>🌍 Select Your Language</h3>
+
+<select id="language" onchange="changeLanguage()">
+<option value="English">English</option>
+<option value="मराठी">मराठी</option>
+<option value="हिंदी">हिंदी</option>
+<option value="Spanish">Spanish</option>
+<option value="French">French</option>
+<option value="German">German</option>
+<option value="Japanese">Japanese</option>
+<option value="Chinese">Chinese</option>
+<option value="Arabic">Arabic</option>
+<option value="Portuguese">Portuguese</option>
+</select>
+
+<p id="message">Your journey starts here!</p>
+</div>
+
+<div class="card">
+<h2>📚 LEARN</h2>
+<p>Learn new skills.</p>
+<button onclick="show('Learn')">Start Learning</button>
+</div>
+
+<div class="card">
+<h2>🔍 DISCOVER</h2>
+<p>Discover your abilities.</p>
+<button onclick="show('Discover')">Discover Skills</button>
+</div>
+
+<div class="card">
+<h2>🎯 ACHIEVE</h2>
+<p>Achieve your goals.</p>
+<button onclick="show('Achieve')">Set My Goal</button>
+</div>
+
+<div class="card">
+<h3 id="heading">Your Journey</h3>
+<p id="result">Choose a feature above.</p>
+</div>
+
+<script>
+function changeLanguage() {
+ const lang = document.getElementById("language").value;
+ const messages = {
+  English: "Your journey starts here!",
+  मराठी: "तुमचा प्रवास इथून सुरू होतो!",
+  हिंदी: "आपकी यात्रा यहाँ से शुरू होती है!"
+ };
+ document.getElementById("message").innerText =
+ messages[lang] || "Language selected: " + lang;
+}
+
+function show(feature) {
+ document.getElementById("heading").innerText = feature;
+ document.getElementById("result").innerText =
+ "Your " + feature + " journey starts now!";
+}
+</script>
+
+</body>
+</html>
