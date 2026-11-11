@@ -99,5 +99,34 @@ function show(feature) {
 }
 </script>
 
+<div class="card" id="ai-chat">
+  <h2>🤖 Human Ability AI Chat</h2>
+  <div id="chatMessages">
+    <p>AI: Hello! How can I help you?</p>
+  </div>
+  <input id="chatInput" placeholder="Ask me anything..." style="width:90%;padding:12px;">
+  <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+function sendMessage() {
+  const input = document.getElementById("chatInput");
+  const messages = document.getElementById("chatMessages");
+  const question = input.value.trim();
+
+  if (!question) return;
+
+  const user = document.createElement("p");
+  user.textContent = "You: " + question;
+  messages.appendChild(user);
+
+  const reply = document.createElement("p");
+  reply.textContent = "AI: Thanks for your question! I am Human Ability AI. Real AI connection will be added next.";
+  messages.appendChild(reply);
+
+  input.value = "";
+}
+</script>
+  
 </body>
 </html>
